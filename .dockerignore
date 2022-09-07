@@ -1,0 +1,9 @@
+*
+!certifier/src/**
+!certifier/tests/**
+!certifier/pyproject.toml
+!certifier/poetry.lock
+!certifier/LICENSE
+!certifier/README.md
+!environment.yml
+!requirements.txt

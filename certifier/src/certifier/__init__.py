@@ -1,0 +1,1 @@
+from certifier.resources import *
