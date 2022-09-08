@@ -3,7 +3,7 @@
 
 [tool.poetry]
 name = "certifier"
-version = "0.1.0"
+version = "0.2.0"
 description = "self-signed certificates generator 🔒"
 readme = "certifier/README.md"
 authors = ["radio-aktywne <it@radioaktywne.pl>"]
@@ -16,6 +16,12 @@ packages = [{ include = "certifier", from = "certifier/src" }]
 [tool.poetry.dependencies]
 python = "^3.9"
 typer = { version = "^0.4", extras = ["all"] }
+trustme = "^0.9"
+pydantic = "^1.10"
+pyhumps = "^3.7"
+PyYAML = "^6.0"
+deepmerge = "^1.0"
+httpx = "^0.23"
 
 # dev
 
