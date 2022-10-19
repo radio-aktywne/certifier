@@ -19,9 +19,16 @@ def certify(config: Config) -> None:
     path = config.path
 
     if config.ca_cert is not None and config.ca_key is not None:
-        ca = CA.from_pem(
-            config.ca_cert.read_bytes(), config.ca_key.read_bytes()
-        )
+        if config.ca_cert.exists() and config.ca_key.exists():
+            ca = CA.from_pem(
+                config.ca_cert.read_bytes(), config.ca_key.read_bytes()
+            )
+        else:
+            logger.warning("CA cert or key not found, generating new CA.")
+            ca = CA(
+                organization_name=config.organization,
+                organization_unit_name=config.unit,
+            )
     else:
         ca = CA(
             organization_name=config.organization,

@@ -1,33 +1,25 @@
 from pathlib import Path
-from typing import Dict, Literal, Optional, Set, Annotated, Union, List
+from typing import Optional, Set, Literal, List, Annotated, Union, Dict
 
-from humps import camelize
 from pydantic import BaseModel, Field
 
-
-class ConfigBase(BaseModel):
-    def json(self, *args, by_alias: bool = True, **kwargs) -> str:
-        return super().json(*args, by_alias=by_alias, **kwargs)
-
-    class Config:
-        allow_population_by_field_name = True
-        alias_generator = camelize
+from certifier.config.base import BaseConfig
 
 
-class SelfSignedSingleCertConfig(ConfigBase):
+class SelfSignedSingleCertConfig(BaseModel):
     identities: Optional[Set[str]] = None
     cert_file: Optional[str] = None
     key_file: Optional[str] = None
 
 
-class SelfSignedCertConfig(ConfigBase):
+class SelfSignedCertConfig(BaseModel):
     type: Literal["self-signed"] = "self-signed"
     ca_file: Optional[str] = None
     server: List[SelfSignedSingleCertConfig] = []
     client: List[SelfSignedSingleCertConfig] = []
 
 
-class TraefikMeCertConfig(ConfigBase):
+class TraefikMeCertConfig(BaseModel):
     type: Literal["traefik.me"] = "traefik.me"
     cert_file: Optional[str] = None
     key_file: Optional[str] = None
@@ -42,7 +34,7 @@ CertConfig = Annotated[
 ]
 
 
-class Config(ConfigBase):
+class Config(BaseConfig):
     path: Path
     organization: str = "certifier"
     unit: str = "certifier"
