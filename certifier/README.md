@@ -4,8 +4,9 @@
 
 self-signed certificates generator 🔒
 
-[![Tests](https://github.com/radio-aktywne/certifier/actions/workflows/test-docker.yml/badge.svg)](https://github.com/radio-aktywne/certifier/actions/workflows/test-docker.yml)
-[![Docs](https://github.com/radio-aktywne/certifier/actions/workflows/docs.yml/badge.svg)](https://github.com/radio-aktywne/certifier/actions/workflows/docs.yml)
+[![Lint](https://github.com/radio-aktywne/certifier/actions/workflows/lint.yaml/badge.svg)](https://github.com/radio-aktywne/certifier/actions/workflows/lint.yaml)
+[![Tests](https://github.com/radio-aktywne/certifier/actions/workflows/test-docker.yaml/badge.svg)](https://github.com/radio-aktywne/certifier/actions/workflows/test-docker.yaml)
+[![Docs](https://github.com/radio-aktywne/certifier/actions/workflows/docs.yaml/badge.svg)](https://github.com/radio-aktywne/certifier/actions/workflows/docs.yaml)
 
 </div>
 
