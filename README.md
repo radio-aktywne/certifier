@@ -14,9 +14,9 @@ self-signed certificates generator 🔒
 
 This `README` provides info about the development process.
 
-For more info about the package itself
-see `certifier/README.md`
-or [docs](https://radio-aktywne.github.io/certifier).
+For more info about the package itself see
+[package `README`](certifier/README.md) or
+[docs](https://radio-aktywne.github.io/certifier).
 
 ## Quickstart (on Ubuntu)
 
